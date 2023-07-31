@@ -1,0 +1,131 @@
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.newsItem {
+  background-color: #ffffff;
+
+}
+
+.vote {
+  text-align: center;
+}
+
+.emoji {
+  height:24px;
+  width:24px;
+}
+.header {
+  background-color: #3c1464;
+}
+
+.logo {
+  height: 40px;
+}
+.save:hover {
+  color: #61eb34;
+  font-weight:bold;
+}
+
+.voteUp:hover {
+  color: #61eb34;
+  font-weight:bold;
+}
+
+.hide:hover {
+  color: red;
+  font-weight:bold;
+}
+
+.voteDown:hover {
+  color: red;
+  font-weight:bold;
+}
+
+.saved {
+  color: #61eb34;
+}
+
+.promoted {
+  color: #61eb34;
+}
+
+
+.demoted {
+  color: red;
+}
+
+a.navLink:link, a.navLink:visited {
+  margin-left:15px;
+  color: #fff;
+  text-decoration: none;
+
+}
+
+a.navLink:hover {
+  margin-left:15px;
+  color: #e94573;
+  text-decoration: none;
+}
+
+.navMenu {
+  background-color: #561D8F;
+  /*background-color: #9c8cac;*/
+  border-top-left-radius: 15px;
+
+}
+
+.sidebarItem {
+  background-color: #fff;
+}
+
+.videoIcon {
+  padding-right: 2px;
+}
+
+ul.horiz  > li {
+  display: inline-block;
+  /* You can also add some margins here to make it look prettier */
+}
+
+.list-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.list-item {
+  padding: 12px;
+  cursor: pointer;
+}
+
+.list-item:hover {
+  background: rgba(0, 0, 0, .05);
+}
+
+#loader {
+  color: rgba(0, 0, 235, 0.5);
+  padding: 12px;
+  cursor: progress;
+}
+
+#end {
+  padding: 12px;
+  font-weight: 700;
+}
+
+.searchBar {
+  background: rgba(209, 209, 207);
+
+}
