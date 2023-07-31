@@ -4,3 +4,4 @@ This is the frontend for a collaborative RSS reader. It's a project I'm developi
 
 It's in a fairly rough state, heavily annotated with TODO comments
 
+In addition to code comments, I have a list here: https://trello.com/b/Snxn8H1E/laffo
