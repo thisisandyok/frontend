@@ -35,6 +35,8 @@
     "build:production": "env-cmd -f .env.production react-scripts build",
     "deploy:stage": "aws s3 sync build/ s3://stage.massivepigeon.com",
     "deploy:production": "aws s3 sync build/ s3://massivepigeon.com",
+    "clearcache:stage": "aws cloudfront create-invalidation --distribution-id E2ANMWFQHOL3YN --paths '/*'",
+    "clearcache:production": "aws cloudfront create-invalidation --distribution-id E25845PIHE9VVO --paths '/*'",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

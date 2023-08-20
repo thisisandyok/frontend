@@ -31,3 +31,5 @@ jobs:
           aws-region: us-east-1
       - name: Deploy to S3
         run: npm run deploy:production
+      - name: Invalidate CloudFront Cache
+        run: npm run clearcache:production
