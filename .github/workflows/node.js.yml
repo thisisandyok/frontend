@@ -31,5 +31,5 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
       - name: Deploy to S3
-      - run: npm run deploy:production
+        run: npm run deploy:production
       
