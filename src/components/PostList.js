@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import '../App.css';
-import axios from 'axios';
 import PostCard from './PostCard';
 import Footer from './Footer';
 import Header from './Header';
@@ -15,7 +14,7 @@ function PostList() {
     const cookies = new Cookies();
     const session_id = cookies.get('session_id');
 
-    const { data, more, loading, error } = usePagination(page);
+    const { data, more, loading } = usePagination(page);
     const observer = useRef(); // ref to store observer
 
     const lastElementRef = useCallback((element) => {

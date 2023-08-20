@@ -4,7 +4,6 @@ import Footer from './Footer';
 import Header from './Header';
 import axios from "axios";
 import AccountMenu from "./AccountMenu";
-const url = process.env.REACT_APP_TODOLIST_DATAFILE_URL;
 function Account() {
     const [user, setUser] = useState({});
 

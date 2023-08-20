@@ -22,7 +22,7 @@ export default function usePagination(page) {
             withCredentials: true
         }).then(({ data: resData }) => {
             setData((prev) => [...new Set([...prev, ...resData])]);
-            setMore(resData.length == 30); // set more to true if nextPage exists
+            setMore(resData.length === 30); // set more to true if nextPage exists
             setLoading(false);
         })
             .catch(() => setError(true));

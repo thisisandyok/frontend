@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Link, useParams, useNavigate} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../App.css';
 import axios from 'axios';
 import Footer from './Footer';
@@ -13,10 +13,6 @@ function Search(props) {
     const [posts, setPosts] = useState([]);
     const queryParameters = new URLSearchParams(window.location.search)
     const term = queryParameters.get("term");
-
-    function Post(props) {
-        return <li>[{props.author}]<Link to={`/post/${props.id}`}>{props.name} </Link> {props.date}</li>;
-    }
 
     useEffect(() => {
 
