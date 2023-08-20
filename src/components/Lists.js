@@ -19,10 +19,10 @@ function ListList() {
     useEffect(() => {
         const fetchData = async () => {
             const userData = await axios
-                .get(`{process.env.REACT_APP_API_DOMAIN}:{process.env.REACT_APP_API_PORT}/api/user/`, { withCredentials: true });
+                .get(`${process.env.REACT_APP_API_DOMAIN}:${process.env.REACT_APP_API_PORT}/api/user/`, { withCredentials: true });
 
             const listData = await axios
-                .get(`{process.env.REACT_APP_API_DOMAIN}:{process.env.REACT_APP_API_PORT}/api/lists`, { withCredentials: true });
+                .get(`${process.env.REACT_APP_API_DOMAIN}:${process.env.REACT_APP_API_PORT}/api/lists`, { withCredentials: true });
 
             listData.data.sort((a, b) => (!a.name || a.name > b.name) ? 1 : -1)
             setUser(userData.data);
@@ -39,7 +39,7 @@ function ListList() {
     const onChange = ( (event) => {
 
         if(event.currentTarget.checked) {
-            axios.put(`{process.env.REACT_APP_API_DOMAIN}:{process.env.REACT_APP_API_PORT}/api/subscription`, {list: event.currentTarget.value},{ withCredentials: true })
+            axios.put(`${process.env.REACT_APP_API_DOMAIN}:${process.env.REACT_APP_API_PORT}/api/subscription`, {list: event.currentTarget.value},{ withCredentials: true })
                 .then(() => { NotificationManager.success('Subscription Added', 'Success'); })
                 .catch(() => NotificationManager.error('Error adding subscription, please try again', 'Error'))
 
@@ -47,7 +47,7 @@ function ListList() {
                 selectedLists.push(event.currentTarget.value);
             }
         } else {
-            axios.delete(`{process.env.REACT_APP_API_DOMAIN}:{process.env.REACT_APP_API_PORT}/api/subscription/${event.currentTarget.value}` , { withCredentials: true })
+            axios.delete(`${process.env.REACT_APP_API_DOMAIN}:${process.env.REACT_APP_API_PORT}/api/subscription/${event.currentTarget.value}` , { withCredentials: true })
                 .then(() => { NotificationManager.success('Subscription Removed', 'Success'); })
                 .catch(() => NotificationManager.error('Error removing subscription, please try again', 'Error'))
             const index = selectedLists.indexOf(event.currentTarget.value);

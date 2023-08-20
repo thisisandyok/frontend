@@ -16,7 +16,7 @@ function Search(props) {
     useEffect(() => {
 
         axios
-            .get(`{process.env.REACT_APP_API_DOMAIN}:{process.env.REACT_APP_API_PORT}/api/search/`, {
+            .get(`${process.env.REACT_APP_API_DOMAIN}:${process.env.REACT_APP_API_PORT}/api/search/`, {
                 params: { // query params
                     term
                 },

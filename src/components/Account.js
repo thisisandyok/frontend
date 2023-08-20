@@ -10,7 +10,7 @@ function Account() {
     useEffect(() => {
         const fetchData = async () => {
             const userData = await axios
-                .get(`{url}:{process.env.REACT_APP_API_PORT}/api/user/`, { withCredentials: true });
+                .get(`${process.env.REACT_APP_API_DOMAIN}:${process.env.REACT_APP_API_PORT}/api/user/`, { withCredentials: true });
             setUser(userData.data);
         };
         void fetchData();

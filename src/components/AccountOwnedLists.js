@@ -13,7 +13,7 @@ function AccountOwnedLists() {
     useEffect(() => {
         const fetchData = async () => {
             const listData = await axios
-                .get(`{process.env.REACT_APP_API_DOMAIN}:{process.env.REACT_APP_API_PORT}/api/userlists/`, { withCredentials: true });
+                .get(`${process.env.REACT_APP_API_DOMAIN}:${process.env.REACT_APP_API_PORT}/api/userlists/`, { withCredentials: true });
 
             setLists(listData.data);
         };

@@ -25,7 +25,7 @@ function Register() {
         };
 
         axios
-            .post(`{process.env.REACT_APP_API_DOMAIN}:{process.env.REACT_APP_API_PORT}/api/user/`, data)
+            .post(`${process.env.REACT_APP_API_DOMAIN}:${process.env.REACT_APP_API_PORT}/api/user/`, data)
             .then((res) => {
                 const cookies = new Cookies();
                 cookies.set('session_id', res.data.session, { path: '/', domain: process.env.REACT_APP_COOKIE_DOMAIN });
