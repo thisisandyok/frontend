@@ -29,8 +29,12 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "PORT=3006 react-scripts start",
+    "start": "PORT=3006 env-cmd -f .env.development react-scripts start",
     "build": "react-scripts build",
+    "build:stage": "env-cmd -f .env.stage react-scripts build ",
+    "build:production": "env-cmd -f .env.production react-scripts build",
+    "deploy:stage": "aws s3 sync build/ s3://stage.massivepigeon.com",
+    "deploy:production": "aws s3 sync build/ s3://massivepigeon.com",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

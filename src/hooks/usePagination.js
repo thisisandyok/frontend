@@ -15,7 +15,7 @@ export default function usePagination(page) {
         setLoading(true);
 
         // make call to API
-        axios.get('https://api.laffo.com/api/posts', {
+        axios.get(`{process.env.REACT_APP_API_DOMAIN}:{process.env.REACT_APP_API_PORT}/api/posts/`, {
             params: { // query params
                 page
             },

@@ -15,7 +15,7 @@ function ShowPostDetails(props) {
 
     useEffect(() => {
         axios
-            .get(`https://api.laffo.com/api/posts/${id}`, { withCredentials: true })
+            .get(`{process.env.REACT_APP_API_DOMAIN}:{process.env.REACT_APP_API_PORT}/api/posts/${id}`, { withCredentials: true })
             .then((res) => {
                 setPost(res.data);
             })

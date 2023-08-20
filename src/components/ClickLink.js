@@ -8,11 +8,11 @@ function ClickLink(props) {
     const {id} = useParams();
 
     useEffect(() => {
-        axios.put('https://api.laffo.com/api/clicks/', {
+        axios.put(`{process.env.REACT_APP_API_DOMAIN}:{process.env.REACT_APP_API_PORT}/api/clicks/`, {
             post: id,
         }, { withCredentials: true });
         axios
-            .get(`https://api.laffo.com/api/posts/${id}`, { withCredentials: true })
+            .get(`{process.env.REACT_APP_API_DOMAIN}:{process.env.REACT_APP_API_PORT}/api/posts/${id}`, { withCredentials: true })
             .then((res) => {
                 window.location.href = res.data.url;
             });

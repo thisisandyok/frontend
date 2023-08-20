@@ -4,14 +4,14 @@ import Footer from './Footer';
 import Header from './Header';
 import axios from "axios";
 import AccountMenu from "./AccountMenu";
-
+const url = process.env.REACT_APP_TODOLIST_DATAFILE_URL;
 function Account() {
     const [user, setUser] = useState({});
 
     useEffect(() => {
         const fetchData = async () => {
             const userData = await axios
-                .get('https://api.laffo.com/api/user/', { withCredentials: true });
+                .get(`{url}:{process.env.REACT_APP_API_PORT}/api/user/`, { withCredentials: true });
             setUser(userData.data);
         };
         void fetchData();

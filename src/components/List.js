@@ -18,7 +18,7 @@ function ShowListDetails(props) {
 
     useEffect(() => {
         axios
-            .get(`https://api.laffo.com/api/lists/${id}`, { withCredentials: true })
+            .get(`{process.env.REACT_APP_API_DOMAIN}:{process.env.REACT_APP_API_PORT}/api/lists/${id}`, { withCredentials: true })
             .then((res) => {
                 res.data.posts.sort((a, b) => (!a.published_date || a.published_date < b.published_date) ? 1 : -1)
                 setList(res.data);

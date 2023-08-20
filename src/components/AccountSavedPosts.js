@@ -12,7 +12,7 @@ function Account() {
     useEffect(() => {
         const fetchData = async () => {
             const saveData = await axios
-                .get('https://api.laffo.com/api/saves/', { withCredentials: true });
+                .get(`{process.env.REACT_APP_API_DOMAIN}:{process.env.REACT_APP_API_PORT}/api/saves/`, { withCredentials: true });
 
             setSaves(saveData.data);
         };

@@ -9,7 +9,6 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
 import DOMPurify from "dompurify";
 
-
 function Search(props) {
     const [posts, setPosts] = useState([]);
     const queryParameters = new URLSearchParams(window.location.search)
@@ -22,7 +21,7 @@ function Search(props) {
     useEffect(() => {
 
         axios
-            .get(`https://api.laffo.com/api/search/`, {
+            .get(`{process.env.REACT_APP_API_DOMAIN}:{process.env.REACT_APP_API_PORT}/api/search/`, {
                 params: { // query params
                     term
                 },

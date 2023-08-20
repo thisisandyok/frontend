@@ -9,7 +9,7 @@ function Logout(props) {
     try {
         useEffect(() => {
             const cookies = new Cookies();
-            cookies.remove("session_id", {path: "/", domain: ".laffo.com"})
+            cookies.remove("session_id", {path: "/", domain: process.env.REACT_APP_COOKIE_DOMAIN})
             navigate('/');
         });
     } catch (error) {

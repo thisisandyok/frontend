@@ -24,7 +24,7 @@ const PostCard = (props) => {
         promote.setAttribute('class', 'svg-inline--fa fa-caret-down promoted fa-xl');
         demote.setAttribute('class', 'svg-inline--fa fa-caret-down voteDown fa-xl');
 
-        axios.put('https://api.laffo.com/api/promotes/', {
+        axios.put(`{process.env.REACT_APP_API_DOMAIN}:{process.env.REACT_APP_API_PORT}/api/promotes/`, {
             post: id,
         }, { withCredentials: true });
 
@@ -37,7 +37,7 @@ const PostCard = (props) => {
         promote.setAttribute('class', 'svg-inline--fa fa-caret-down voteUp fa-xl');
         demote.setAttribute('class', 'svg-inline--fa fa-caret-down demoted fa-xl');
 
-        axios.put('https://api.laffo.com/api/demotes/', {
+        axios.put(`{process.env.REACT_APP_API_DOMAIN}:{process.env.REACT_APP_API_PORT}/api/demotes/`, {
             post: id,
         }, { withCredentials: true });
     }
@@ -47,7 +47,7 @@ const PostCard = (props) => {
         const hidden = document.getElementById("outer-" + id);
         hidden.remove();
 
-        axios.put('https://api.laffo.com/api/hides/', {
+        axios.put(`{process.env.REACT_APP_API_DOMAIN}:{process.env.REACT_APP_API_PORT}/api/hides/`, {
             post: id,
         }, { withCredentials: true });
     }
@@ -57,7 +57,7 @@ const PostCard = (props) => {
         const save = document.getElementById("save-" + id);
         save.setAttribute('class', 'svg-inline--fa fa-square-check saved');
 
-        axios.put('https://api.laffo.com/api/saves/', {
+        axios.put(`{process.env.REACT_APP_API_DOMAIN}:{process.env.REACT_APP_API_PORT}/api/saves/`, {
             post: id,
         }, { withCredentials: true });
     }
