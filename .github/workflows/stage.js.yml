@@ -22,7 +22,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
       - run: npm install env-cmd
-      - run: npm run build:production
+      - run: npm run build:stage
       - name: Set AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -30,6 +30,6 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
       - name: Deploy to S3
-        run: npm run deploy:production
+        run: npm run deploy:stage
       - name: Invalidate CloudFront Cache
-        run: npm run clearcache:production
+        run: npm run clearcache:stage
